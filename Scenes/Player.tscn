@@ -1,19 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Sprites/sapo_pulo.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Animations/jump.tres" type="Animation" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3, 3 )
 
+[sub_resource type="Animation" id=3]
+resource_name = "Stand"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
 [node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
 
 [node name="player_sprite" type="Sprite" parent="."]
+position = Vector2( 1, 0 )
 texture = ExtResource( 1 )
-centered = false
 vframes = 2
 hframes = 6
+frame = 5
 region_rect = Rect2( 19, 4, 1, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4, 9 )
+position = Vector2( -2, 2 )
 shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Jump = ExtResource( 3 )
+anims/Stand = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -39, -27 )
+anchor_mode = 0
+current = true

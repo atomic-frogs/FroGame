@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sapo_pulo.png-b80828c7e6692e76a1f152ab60273d46.stex"
+path="res://.import/BLOCO_ON.png-b8d864b1f340ed7faaa0bb50e2ca5bd0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sapo_pulo.png"
-dest_files=[ "res://.import/sapo_pulo.png-b80828c7e6692e76a1f152ab60273d46.stex" ]
+source_file="res://Assets/Sprites/BLOCO_ON.png"
+dest_files=[ "res://.import/BLOCO_ON.png-b8d864b1f340ed7faaa0bb50e2ca5bd0.stex" ]
 
 [params]
 
