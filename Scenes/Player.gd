@@ -29,12 +29,15 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	if is_on_floor():
+		if dir == 0 :
+			print("stand")
+			animationPlayer.play("Stand")
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = jump_speed
 			animationPlayer.play("Jump")
-		if dir == 0:
-			animationPlayer.play("Stand")
-			
+			print("jump")
+	else:
+		animationPlayer.animation_set_next("Jump","Fall")
 
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)

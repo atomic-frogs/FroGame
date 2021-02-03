@@ -1,11 +1,42 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Sprites/sapo_pulo.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Animations/jump.tres" type="Animation" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3, 3 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Jump"
+length = 0.13
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.01, 0.03, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 4 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Stand"
@@ -31,7 +62,7 @@ position = Vector2( 1, 0 )
 texture = ExtResource( 1 )
 vframes = 2
 hframes = 6
-frame = 5
+frame = 11
 region_rect = Rect2( 19, 4, 1, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -39,7 +70,8 @@ position = Vector2( -2, 2 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Jump = ExtResource( 3 )
+anims/Fall = SubResource( 5 )
+anims/Jump = SubResource( 4 )
 anims/Stand = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
