@@ -9,6 +9,7 @@ export (float, 0, 1.0) var acceleration = 0.25
 var velocity = Vector2.ZERO
 var dir = 0
 
+onready var raycast = $RayCast2D
 onready var sprite = $player_sprite
 onready var animationPlayer = $AnimationPlayer
 
@@ -29,15 +30,19 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	if is_on_floor():
+		print("floor")
 		if dir == 0 :
-			print("stand")
+#			print("stand")
 			animationPlayer.play("Stand")
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = jump_speed
 			animationPlayer.play("Jump")
 			print("jump")
 	else:
-		animationPlayer.animation_set_next("Jump","Fall")
+		if raycast.is_colliding() and animationPlayer.current_animation != "Jump":
+			print("caindo")
+#			animationPlayer.animation_set_next("Jump","Fall")
+			animationPlayer.play("Fall")
 
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)

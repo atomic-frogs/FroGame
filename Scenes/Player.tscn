@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Sprites/sapo_pulo.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Nokia 3310 Font Pack 2021/Efforts @somepx/EffortsPro.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3, 3 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "Fall"
+length = 0.3
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("player_sprite:frame")
 tracks/0/interp = 1
@@ -15,13 +18,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.04, 0.08, 0.12, 0.19, 0.23, 0.28 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 7, 8, 9, 10, 11 ]
+"values": [ 5, 6, 7, 8, 9, 10, 11 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Jump"
 length = 0.13
 step = 0.01
@@ -38,8 +41,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 4 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Stand"
+[sub_resource type="Animation" id=4]
 length = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("player_sprite:frame")
@@ -54,6 +56,9 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 3 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -62,7 +67,6 @@ position = Vector2( 1, 0 )
 texture = ExtResource( 1 )
 vframes = 2
 hframes = 6
-frame = 11
 region_rect = Rect2( 19, 4, 1, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -70,11 +74,23 @@ position = Vector2( -2, 2 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Fall = SubResource( 5 )
-anims/Jump = SubResource( 4 )
-anims/Stand = SubResource( 3 )
+anims/Fall = SubResource( 2 )
+anims/Jump = SubResource( 3 )
+anims/Stand = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -39, -27 )
-anchor_mode = 0
 current = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 10 )
+
+[node name="Score" type="Label" parent="."]
+margin_left = -36.0
+margin_top = -24.0
+margin_right = -15.0
+margin_bottom = -10.0
+custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
