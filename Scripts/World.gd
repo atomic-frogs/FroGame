@@ -12,6 +12,7 @@ onready var label = $Player/Score
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	starting = $Player.get_global_position().y
+	Global.world = self
 	pass # Replace with function body.
 
 
@@ -19,3 +20,12 @@ func _ready():
 func _process(delta):
 	score = abs($Player.get_global_position().y) - starting
 	label.text = str(int(score))
+
+func _exit_tree():
+	Global.world = null
+
+
+func instance_node(node, location):
+	var node_instance = node.instance()
+	add_child(node_instance)
+	node_instance.global_position = location

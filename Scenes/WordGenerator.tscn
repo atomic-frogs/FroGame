@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/WordGenerator.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Block.tscn" type="PackedScene" id=2]
+
+[node name="WordGenerator" type="Position2D"]
+script = ExtResource( 1 )
+block = ExtResource( 2 )
+grid_size_x = 9
+max_blocks = 10

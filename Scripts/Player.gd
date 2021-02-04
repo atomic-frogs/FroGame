@@ -30,7 +30,6 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	if is_on_floor():
-		print("floor")
 		if dir == 0 :
 #			print("stand")
 			animationPlayer.play("Stand")
@@ -39,7 +38,7 @@ func _physics_process(delta):
 			animationPlayer.play("Jump")
 			print("jump")
 	else:
-		if raycast.is_colliding() and animationPlayer.current_animation != "Jump":
+		if raycast.is_colliding() and !animationPlayer.is_playing():
 			print("caindo")
 #			animationPlayer.animation_set_next("Jump","Fall")
 			animationPlayer.play("Fall")
