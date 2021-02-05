@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blackscreen_gamer.png-675cadd5bfd2849a403e0e60dab56ec7.stex"
+path="res://.import/sapo_anda_PICA_DEMAIS_Off.png-2986bb7de426f20dcdb9252769fed0c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/blackscreen_gamer.png"
-dest_files=[ "res://.import/blackscreen_gamer.png-675cadd5bfd2849a403e0e60dab56ec7.stex" ]
+source_file="res://Assets/Sprites/sapo_anda_PICA_DEMAIS_Off.png"
+dest_files=[ "res://.import/sapo_anda_PICA_DEMAIS_Off.png-2986bb7de426f20dcdb9252769fed0c0.stex" ]
 
 [params]
 

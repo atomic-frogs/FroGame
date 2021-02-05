@@ -15,9 +15,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Nokiagamejam"
-run/main_scene="res://Scenes/World.tscn"
-config/icon="res://icon.png"
+config/name="FroGame"
+run/main_scene="res://Scenes/Menu.tscn"
+config/icon="res://Assets/unknown.png"
 
 [autoload]
 

@@ -6,6 +6,14 @@ export (PackedScene) var block
 export (int) var grid_size_x
 export (int) var max_blocks
 
+#var fase2
+#
+#var lista_fases = {
+#	"bloco": block,
+#	"fase2": fase2
+#}
+
+
 var current_block_number = 0
 
 
