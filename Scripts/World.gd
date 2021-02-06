@@ -29,3 +29,13 @@ func instance_node(node, location):
 	var node_instance = node.instance()
 	add_child(node_instance)
 	node_instance.global_position = location
+
+func end_game():
+	if score > Global.highScore:
+		Global.highScore = score
+		Global.new_highscore = true
+	else:
+		Global.score_last_played = score
+		Global.new_highscore = false
+	get_tree().change_scene("res://Scenes/End Game.tscn")
+	

@@ -29,6 +29,9 @@ func get_input():
 	
 	if !$walljumptimer.is_stopped():
 		dir = 0
+		
+	if Input.is_action_just_pressed("grudar"):
+		kill()
 
 func jump():
 	if Input.is_action_just_pressed("jump"):
@@ -49,6 +52,8 @@ func _physics_process(delta):
 			print("caindo")
 #			animationPlayer.animation_set_next("Jump","Fall")
 			animationPlayer.play("Fall")
+		
+		
 		if is_on_wall():
 			if dir != 0:
 				velocity.y = 0
@@ -60,8 +65,6 @@ func _physics_process(delta):
 					velocity.x = (dir * -1) * 150
 					
 					animationPlayer.play("Jump")
-					
-					
 	
 	
 	if Global.off:
@@ -73,3 +76,7 @@ func _physics_process(delta):
 
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+
+func kill():
+	get_parent().end_game()
