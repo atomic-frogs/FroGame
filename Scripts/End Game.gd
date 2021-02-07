@@ -2,12 +2,15 @@ extends Control
 
 
 func _ready():
+	Global.off = false
+	
+	$AnimatedSprite.play()
 	
 	if Global.new_highscore:
 		$HighScore.text = "New High Score: " + str(Global.highScore)
 	else:
-		$HighScore.text = "High Score: " + str(Global.highScore)
-		$Lastplayed.text = "Score: " + str(Global.score_last_played)
+		$HighScore.text = "High Score: " + str(round(Global.highScore))
+		$Lastplayed.text = "Score: " + str(round(Global.score_last_played))
 	
 
 

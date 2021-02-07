@@ -5,7 +5,7 @@ signal instance_node(node, location)
 
 export (PackedScene) var enemy
 
-var enemys = 1
+var enemys = 0
 
 func _process(delta):
 	if Global.world != null:

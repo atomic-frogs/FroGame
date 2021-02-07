@@ -30,9 +30,7 @@ func get_input():
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
 	
-	if !$walljumptimer.is_stopped():
-		dir = 0
-		
+	
 	if Input.is_action_just_pressed("grudar"):
 		kill()
 
@@ -41,7 +39,9 @@ func jump():
 		return true
 
 func _physics_process(delta):
-	get_input()
+	if $walljumptimer.is_stopped():
+		get_input()
+	
 	if is_on_floor():
 		if dir == 0 :
 			animationPlayer.play("Stand")

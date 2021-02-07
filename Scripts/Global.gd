@@ -9,4 +9,4 @@ var highScore = 0
 
 var new_highscore = false
 
-var player_position
+var player_position = Vector2()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=2]
@@ -7,12 +7,13 @@
 [ext_resource path="res://Scripts/Enemy Spawn.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/WordGenerator.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Espinho.tscn" type="PackedScene" id=8]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 131063, 0, 0, 196591, 0, 0, 196592, 0, 0, 196593, 0, 0, 196599, 0, 0, 262129, 0, 0, 262135, 0, 0, 327665, 0, 0, 327671, 0, 0, 393201, 0, 0, 393207, 0, 0, 327682, 2, 0, 327684, 2, 0, 327685, 2, 0, 458737, 0, 0, 524273, 0, 0, 589809, 0, 0, 655345, 0, 0, 720881, 0, 0, 786417, 0, 0, 851953, 0, 0, 917489, 0, 0, 983025, 0, 0, 1048561, 0, 0, 1048562, 0, 0, 1048563, 0, 0, 1048564, 0, 0, 1048565, 0, 0, 1048566, 0, 0, 1048567, 0, 0, 1048568, 0, 0, 1048569, 0, 0, 1048570, 0, 0, 1048571, 0, 0, 1048572, 0, 0, 1048573, 0, 0, 1048574, 0, 0, 1048575, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0 )
+tile_data = PoolIntArray( 65533, 1, 0, 65534, 2, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 14, 2, 0, 17, 3, 0, 131070, 4, 0, 131071, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 65539, 4, 0, 65540, 4, 0, 65541, 4, 0, 65542, 4, 0, 65543, 4, 0, 65544, 4, 0, 65545, 4, 0, 65546, 4, 0, 65547, 4, 0, 65548, 4, 0, 65549, 4, 0, 65550, 4, 0, 196606, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 131083, 2, 0, 131084, 2, 0, 131085, 2, 0, 131086, 2, 0, 1048570, 0, 0, 1048571, 0, 0, 1048572, 0, 0, 1048573, 0, 0, 1048574, 0, 0, 1048575, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0 )
 
 [node name="WordGenerator" parent="." instance=ExtResource( 6 )]
 max_blocks = 3
@@ -21,9 +22,12 @@ max_blocks = 3
 position = Vector2( 34.0308, -9.09397 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 31.2351, -10.0763 )
+position = Vector2( 50.6575, -8.80435 )
 
 [node name="Enemy Spawn" type="Position2D" parent="Player"]
 position = Vector2( 22.124, 19.876 )
 script = ExtResource( 5 )
 enemy = ExtResource( 7 )
+
+[node name="Espinho" parent="." instance=ExtResource( 8 )]
+position = Vector2( -51.5164, -3.17839 )

@@ -17,7 +17,6 @@ _global_script_class_icons={
 
 config/name="FroGame"
 run/main_scene="res://Scenes/Menu.tscn"
-config/icon="res://Assets/unknown.png"
 
 [autoload]
 
