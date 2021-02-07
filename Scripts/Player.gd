@@ -68,8 +68,8 @@ func _physics_process(delta):
 				if jump():
 					
 					$walljumptimer.start()
-					velocity.y = jump_speed
-					velocity.x = (dir * -1) * 150
+					velocity.y = jump_speed * 1.25
+					velocity.x = (dir * -1) * 75
 					
 					animationPlayer.play("Jump")
 	

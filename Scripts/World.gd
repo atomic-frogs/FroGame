@@ -13,7 +13,7 @@ func _ready():
 
 
 func _process(delta):
-	score = abs($Player.get_global_position().y) - starting
+	score = (abs($Player.get_global_position().y) - starting) / 10
 	label.text = str(int(score))
 	
 	Global.player_position = $Player.get_global_position()
