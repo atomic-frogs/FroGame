@@ -7,10 +7,11 @@ func _ready():
 	$AnimatedSprite.play()
 	
 	if Global.new_highscore:
-		$HighScore.text = "New High Score: " + str(Global.highScore)
+		$HighScore.text = str(round(Global.highScore))
+		$Youdied2.show()
 	else:
-		$HighScore.text = "High Score: " + str(round(Global.highScore))
-		$Lastplayed.text = "Score: " + str(round(Global.score_last_played))
+#		$HighScore.text = str(round(Global.highScore))
+		$Lastplayed.text = str(round(Global.score_last_played))
 	
 
 

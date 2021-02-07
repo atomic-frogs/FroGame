@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Nokia 3310 Font Pack 2021/Efforts @somepx/EffortsPro.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/End Game.gd" type="Script" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Assets/Sprites/MORTE/PRE MORTE7.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Sprites/MORTE/PRE MORTE6.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Sprites/MORTE/PRE MORTE13.png" type="Texture" id=15]
+[ext_resource path="res://Assets/YOU_DIED2_.png" type="Texture" id=16]
+[ext_resource path="res://Assets/YOU_DIED1_.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -40,11 +42,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Youdied1" type="Sprite" parent="."]
+texture = ExtResource( 17 )
+centered = false
+
+[node name="Youdied2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 16 )
+centered = false
+
 [node name="HighScore" type="Label" parent="."]
-margin_left = 2.0
-margin_top = 11.0
-margin_right = 47.0
-margin_bottom = 33.0
+margin_left = 27.778
+margin_top = 58.0157
+margin_right = 44.778
+margin_bottom = 71.0157
 custom_fonts/font = SubResource( 1 )
 autowrap = true
 __meta__ = {
@@ -52,35 +63,28 @@ __meta__ = {
 }
 
 [node name="Lastplayed" type="Label" parent="."]
-margin_left = 3.0
-margin_top = 35.0
-margin_right = 47.0
-margin_bottom = 54.0
+margin_left = 28.889
+margin_top = 55.2789
+margin_right = 42.889
+margin_bottom = 68.2789
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = -5.27928
-margin_top = 56.4536
-margin_right = 52.7207
-margin_bottom = 76.4536
+margin_left = -3.30551
+margin_top = 71.778
+margin_right = 54.6945
+margin_bottom = 90.778
 custom_fonts/font = SubResource( 2 )
-text = "Play Again"
-
-[node name="Gameover" type="Label" parent="."]
-margin_left = 4.24265
-margin_top = -2.12132
-margin_right = 44.2426
-margin_bottom = 11.8787
-custom_fonts/font = SubResource( 1 )
-text = "GameOver"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
 frames = SubResource( 3 )
 speed_scale = 2.0
 centered = false

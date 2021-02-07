@@ -18,12 +18,13 @@ var current_block_number = 0
 
 
 func _process(delta):
-	if Global.world != null:
-		if !is_connected("instance_node", Global.world, "instance_node"):
-			connect("instance_node", Global.world, "instance_node")
-	
-	
-	if current_block_number < max_blocks:
+	if Global.levels_to_generate > 0:
+		if Global.world != null:
+			if !is_connected("instance_node", Global.world, "instance_node"):
+				connect("instance_node", Global.world, "instance_node")
+		
+		
+#		if current_block_number < max_blocks:
 		var action = round(rand_range(0, 20))
 		
 		if action >= 10:
@@ -33,6 +34,5 @@ func _process(delta):
 		
 		global_position.y -= 90
 		
-		current_block_number += 1
-	else:
-		queue_free()
+#		current_block_number += 1
+		Global.levels_to_generate -= 1

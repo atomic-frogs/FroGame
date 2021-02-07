@@ -10,3 +10,5 @@ var highScore = 0
 var new_highscore = false
 
 var player_position = Vector2()
+
+var levels_to_generate = 3

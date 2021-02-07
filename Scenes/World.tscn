@@ -24,6 +24,11 @@ position = Vector2( 34.0308, -9.09397 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 50.6575, -8.80435 )
 
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2( -2.99181, 6.91659 )
+current = true
+zoom = Vector2( 4, 4 )
+
 [node name="Enemy Spawn" type="Position2D" parent="Player"]
 position = Vector2( 22.124, 19.876 )
 script = ExtResource( 5 )
