@@ -20,6 +20,8 @@ func _ready():
 func _process(delta):
 	score = abs($Player.get_global_position().y) - starting
 	label.text = str(int(score))
+	
+	Global.player_position = $Player.get_global_position()
 
 func _exit_tree():
 	Global.world = null

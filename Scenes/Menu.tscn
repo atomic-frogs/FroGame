@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Nokia 3310 Font Pack 2021/Efforts @somepx/EffortsPro.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/unknown.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Menu.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
@@ -17,21 +17,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="unknown" type="Sprite" parent="."]
-position = Vector2( 0.125, 0 )
-scale = Vector2( 0.047689, 0.144885 )
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="Button" type="Button" parent="."]
-margin_left = 9.0
-margin_top = 40.0
-margin_right = 38.0
-margin_bottom = 59.0
+[node name="Button" type="Button" parent="Sprite"]
+margin_left = 30.0
+margin_top = 133.333
+margin_right = 59.0
+margin_bottom = 152.333
 custom_fonts/font = SubResource( 1 )
 text = "Play"
-flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Sprite/Button" to="." method="_on_Button_pressed"]

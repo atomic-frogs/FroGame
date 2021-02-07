@@ -10,7 +10,8 @@ var velocity = Vector2.ZERO
 var dir = 0
 
 onready var raycast = $RayCast2D
-onready var sprite = $player_sprite
+onready var sprite = $player_sprite_on
+onready var sprite2 = $player_sprite_off
 onready var animationPlayer = $AnimationPlayer
 onready var blackground = $Blackground
 
@@ -19,9 +20,11 @@ func get_input():
 	if Input.is_action_pressed("right"):
 		dir += 1
 		sprite.flip_h = 0
+		sprite2.flip_h = 0
 	if Input.is_action_pressed("left"):
 		dir -= 1
 		sprite.flip_h = 1
+		sprite2.flip_h = 1
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
@@ -41,8 +44,11 @@ func _physics_process(delta):
 	get_input()
 	if is_on_floor():
 		if dir == 0 :
-#			print("stand")
 			animationPlayer.play("Stand")
+		else:
+			animationPlayer.play("Walk")
+		
+		
 		if jump():
 			velocity.y = jump_speed
 			animationPlayer.play("Jump")
@@ -57,6 +63,7 @@ func _physics_process(delta):
 		if is_on_wall():
 			if dir != 0:
 				velocity.y = 0
+				animationPlayer.play("Grude")
 				
 				if jump():
 					
@@ -70,9 +77,16 @@ func _physics_process(delta):
 	if Global.off:
 		blackground.show()
 		blackground.play()
+		
+		sprite2.show()
+		sprite.hide()
+		
 	else:
 		blackground.hide()
 		blackground.stop()
+		
+		sprite2.hide()
+		sprite.show()
 
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
