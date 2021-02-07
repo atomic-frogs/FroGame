@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Sprites/Player/MOVIMENTOS_SAPO_ON.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -12,42 +12,30 @@
 [sub_resource type="Animation" id=1]
 resource_name = "Fall"
 length = 0.3
-step = 0.05
+step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("player_sprite_on:frame")
+tracks/0/path = NodePath("CollisionShape2D/player_sprite_on:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.03, 0.06, 0.09, 0.12, 0.22, 0.28 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 14, 15, 16, 17, 18, 19 ]
+"values": [ 14, 15, 16, 17, 18, 19, 11 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("player_sprite_off:frame")
+tracks/1/path = NodePath("CollisionShape2D/player_sprite_off:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25 ),
+"times": PoolRealArray( 0, 0.03, 0.06, 0.09, 0.12, 0.22 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 14, 15, 16, 17, 18, 19 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -2.68848, -2.98012 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -55,7 +43,7 @@ resource_name = "Grude"
 length = 0.2
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("player_sprite_on:frame")
+tracks/0/path = NodePath("CollisionShape2D/player_sprite_on:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -67,7 +55,7 @@ tracks/0/keys = {
 "values": [ 13, 20 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("player_sprite_off:frame")
+tracks/1/path = NodePath("CollisionShape2D/player_sprite_off:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -77,25 +65,13 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 13, 20 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.11 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector2( 4.06152, -6.66762 ), Vector2( 4.06152, -5.16762 ) ]
 }
 
 [sub_resource type="Animation" id=3]
 length = 0.13
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("player_sprite_on:frame")
+tracks/0/path = NodePath("CollisionShape2D/player_sprite_on:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -107,7 +83,7 @@ tracks/0/keys = {
 "values": [ 7, 8, 9, 10, 11 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("player_sprite_off:frame")
+tracks/1/path = NodePath("CollisionShape2D/player_sprite_off:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -117,24 +93,12 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 7, 8, 9, 10, 11 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.03, 0.05, 0.07, 0.11 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -1.43848, -3.54262 ), Vector2( -0.250984, -4.60512 ), Vector2( -0.250984, -4.60512 ), Vector2( 0.436516, -5.79262 ), Vector2( 1.43652, -6.41762 ) ]
 }
 
 [sub_resource type="Animation" id=4]
 length = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("player_sprite_on:frame")
+tracks/0/path = NodePath("CollisionShape2D/player_sprite_on:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -146,7 +110,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("player_sprite_off:frame")
+tracks/1/path = NodePath("CollisionShape2D/player_sprite_off:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -156,18 +120,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -1.43848, -3.54262 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -175,7 +127,7 @@ length = 0.25
 loop = true
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("player_sprite_on:frame")
+tracks/0/path = NodePath("CollisionShape2D/player_sprite_on:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -187,7 +139,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("player_sprite_off:frame")
+tracks/1/path = NodePath("CollisionShape2D/player_sprite_off:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -197,18 +149,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -1.43848, -3.54262 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -225,86 +165,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AnimationNodeAnimation" id=11]
-animation = "Fall"
-
-[sub_resource type="AnimationNodeAnimation" id=12]
-animation = "Grude"
-
-[sub_resource type="AnimationNodeAnimation" id=13]
-animation = "Jump"
-
-[sub_resource type="AnimationNodeAnimation" id=14]
-animation = "Stand"
-
-[sub_resource type="AnimationNodeAnimation" id=15]
-animation = "Walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=29]
-
-[sub_resource type="AnimationNodeStateMachine" id=9]
-states/Fall/node = SubResource( 11 )
-states/Fall/position = Vector2( 624, 137 )
-states/Grude/node = SubResource( 12 )
-states/Grude/position = Vector2( 624, 39 )
-states/Jump/node = SubResource( 13 )
-states/Jump/position = Vector2( 428, 39 )
-states/Stand/node = SubResource( 14 )
-states/Stand/position = Vector2( 428, 137 )
-states/Walk/node = SubResource( 15 )
-states/Walk/position = Vector2( 520.927, 241.91 )
-transitions = [ "Stand", "Fall", SubResource( 16 ), "Fall", "Stand", SubResource( 17 ), "Jump", "Stand", SubResource( 18 ), "Stand", "Jump", SubResource( 19 ), "Jump", "Grude", SubResource( 20 ), "Grude", "Jump", SubResource( 21 ), "Grude", "Fall", SubResource( 22 ), "Fall", "Grude", SubResource( 23 ), "Jump", "Fall", SubResource( 24 ), "Fall", "Jump", SubResource( 25 ), "Stand", "Walk", SubResource( 26 ), "Walk", "Stand", SubResource( 27 ), "Walk", "Fall", SubResource( 28 ), "Fall", "Walk", SubResource( 29 ) ]
-graph_offset = Vector2( -231.073, -44.0903 )
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
-
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 2 )
-
-[node name="player_sprite_on" type="Sprite" parent="."]
-position = Vector2( 0, -6 )
-texture = ExtResource( 1 )
-vframes = 3
-hframes = 7
-region_rect = Rect2( 19, 4, 1, 2 )
-
-[node name="player_sprite_off" type="Sprite" parent="."]
-visible = false
-position = Vector2( 0, -6 )
-texture = ExtResource( 8 )
-vframes = 3
-hframes = 7
-region_rect = Rect2( 19, 4, 1, 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 1 )
@@ -314,8 +180,24 @@ anims/Stand = SubResource( 4 )
 anims/Walk = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.43848, -3.54262 )
+position = Vector2( -0.875984, -3.35512 )
 shape = SubResource( 6 )
+
+[node name="player_sprite_on" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 0.875984, -2.64488 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 7
+frame = 19
+region_rect = Rect2( 19, 4, 1, 2 )
+
+[node name="player_sprite_off" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 0.875984, -2.64488 )
+texture = ExtResource( 8 )
+vframes = 3
+hframes = 7
+frame = 19
+region_rect = Rect2( 19, 4, 1, 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -344,8 +226,4 @@ speed_scale = 1.5
 wait_time = 0.2
 one_shot = true
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 9 )
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource( 10 )
+[node name="Node2D" type="Node2D" parent="."]

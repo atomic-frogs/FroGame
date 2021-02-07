@@ -10,8 +10,8 @@ var velocity = Vector2.ZERO
 var dir = 0
 
 onready var raycast = $RayCast2D
-onready var sprite = $player_sprite_on
-onready var sprite2 = $player_sprite_off
+onready var sprite = $CollisionShape2D/player_sprite_on
+onready var sprite2 = $CollisionShape2D/player_sprite_off
 onready var animationPlayer = $AnimationPlayer
 onready var blackground = $Blackground
 
@@ -19,12 +19,14 @@ func get_input():
 	dir = 0
 	if Input.is_action_pressed("right"):
 		dir += 1
-		sprite.flip_h = 0
-		sprite2.flip_h = 0
+		$CollisionShape2D.set_scale(Vector2(1, 1)) 
+#		sprite.flip_h = 0
+#		sprite2.flip_h = 0
 	if Input.is_action_pressed("left"):
 		dir -= 1
-		sprite.flip_h = 1
-		sprite2.flip_h = 1
+		$CollisionShape2D.set_scale(Vector2(-1,1)) 
+#		sprite.flip_h = 1
+#		sprite2.flip_h = 1
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:

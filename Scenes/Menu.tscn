@@ -39,3 +39,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="PLay" to="." method="_on_PLay_pressed"]
+[connection signal="pressed" from="Credito" to="." method="_on_Credito_pressed"]
