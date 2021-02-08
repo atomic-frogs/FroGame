@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Creditos.gd" type="Script" id=1]
+[ext_resource path="res://Assets/CREDITOS.png" type="Texture" id=2]
+
+[node name="Creditos" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Button" type="Button" parent="."]
+margin_left = 14.0
+margin_top = 71.8242
+margin_right = 34.0
+margin_bottom = 91.8242
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

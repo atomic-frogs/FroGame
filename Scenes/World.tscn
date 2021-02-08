@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=2]
@@ -8,15 +8,18 @@
 [ext_resource path="res://Scenes/WordGenerator.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Espinho.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Espinhos.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Sprites/FULL_BLOCK_13x6.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/enemy.png" type="Texture" id=11]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="TileMap" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( -524277, 2, 0, -524276, 3, 0, -458741, 0, 0, -458740, 5, 0, -393205, 0, 0, -393204, 5, 0, -327669, 0, 0, -327668, 5, 0, -262133, 0, 0, -262132, 5, 0, -196597, 0, 0, -196596, 5, 0, -131061, 0, 0, -131060, 5, 0, -65525, 0, 0, -65524, 5, 0, 4, 2, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 11, 7, 0, 12, 7, 0, 13, 7, 0, 14, 7, 0, 15, 7, 0, 16, 3, 0, 65540, 0, 0, 65541, 6, 0, 65542, 6, 0, 65543, 6, 0, 65544, 6, 0, 65545, 6, 0, 65546, 6, 0, 65547, 6, 0, 65548, 6, 0, 65549, 6, 0, 65550, 6, 0, 65551, 6, 0, 65552, 5, 0, 131076, 1, 0, 131077, 8, 0, 131078, 8, 0, 131079, 8, 0, 131080, 8, 0, 131081, 8, 0, 131082, 8, 0, 131083, 8, 0, 131084, 8, 0, 131085, 8, 0, 131086, 8, 0, 131087, 8, 0, 131088, 4, 0 )
-
 [node name="WordGenerator" parent="." instance=ExtResource( 6 )]
 max_blocks = 3
+
+[node name="Sprite" type="Sprite" parent="WordGenerator"]
+texture = ExtResource( 11 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 34.0308, -9.09397 )
@@ -27,11 +30,90 @@ position = Vector2( 50.6575, -8.80435 )
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2( -2.99181, 6.91659 )
 current = true
+zoom = Vector2( 4, 4 )
 
 [node name="Enemy Spawn" type="Position2D" parent="Player"]
-position = Vector2( 22.124, 19.876 )
+position = Vector2( 22.7674, 53.474 )
 script = ExtResource( 5 )
 enemy = ExtResource( 7 )
 
-[node name="Espinho" parent="." instance=ExtResource( 8 )]
-position = Vector2( -51.5164, -3.17839 )
+[node name="Espinhos" type="Node2D" parent="."]
+position = Vector2( -9, 43 )
+z_index = 1
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Espinho" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 13, 3 )
+
+[node name="Espinho2" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 22, 3 )
+
+[node name="Espinho3" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 30.9101, 3 )
+
+[node name="Espinho4" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 39.9505, 3 )
+
+[node name="Espinho5" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 48.9258, 3 )
+
+[node name="Espinho6" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 57.9011, 3 )
+
+[node name="Espinho7" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 67, 3 )
+
+[node name="Espinho8" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 76, 3 )
+
+[node name="Espinho9" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 85, 3 )
+
+[node name="Espinho10" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 94, 3 )
+
+[node name="Espinho11" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 103, 3 )
+
+[node name="Espinho12" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 112, 3 )
+
+[node name="Espinho13" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( -14, 3 )
+
+[node name="Espinho14" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( -5, 3 )
+
+[node name="Espinho15" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 4, 3 )
+
+[node name="Espinho16" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( -41, 3 )
+
+[node name="Espinho17" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( -32, 3 )
+
+[node name="Espinho18" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( -23, 3 )
+
+[node name="Espinho19" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 121, 3 )
+
+[node name="Espinho20" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 130, 3 )
+
+[node name="Espinho21" parent="Espinhos" instance=ExtResource( 8 )]
+position = Vector2( 139, 3 )
+
+[node name="Sprite" type="Sprite" parent="Espinhos"]
+position = Vector2( 57, 38.25 )
+scale = Vector2( 6.2, 7.05556 )
+texture = ExtResource( 10 )
+region_enabled = true
+region_rect = Rect2( 3.79671, 4.29794, 30.9004, 9.25762 )
+
+[node name="TileMap" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0 )

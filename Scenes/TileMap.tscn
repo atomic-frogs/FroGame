@@ -4,5 +4,5 @@
 
 [node name="TileMap" type="TileMap"]
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 6, 3 )
+cell_size = Vector2( 13, 6 )
 format = 1

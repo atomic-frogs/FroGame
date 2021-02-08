@@ -2,7 +2,7 @@ extends Area2D
 
 var player_on_area = false
 
-func _process(delta):
+func _process(_delta):
 	if player_on_area:
 		$Press.show()
 		if Input.is_action_just_pressed("onoff") and !Global.off:

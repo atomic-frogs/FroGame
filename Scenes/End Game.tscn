@@ -53,22 +53,25 @@ texture = ExtResource( 16 )
 centered = false
 
 [node name="HighScore" type="Label" parent="."]
-margin_left = 27.778
-margin_top = 58.0157
-margin_right = 44.778
-margin_bottom = 71.0157
+margin_left = 29.6962
+margin_top = 56.2771
+margin_right = 46.6962
+margin_bottom = 69.2771
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.780392, 0.941176, 0.847059, 1 )
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Lastplayed" type="Label" parent="."]
-margin_left = 28.889
-margin_top = 55.2789
-margin_right = 42.889
-margin_bottom = 68.2789
+visible = false
+margin_left = 28.6663
+margin_top = 55.3903
+margin_right = 42.6663
+margin_bottom = 68.3903
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -85,7 +88,6 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
 frames = SubResource( 3 )
 speed_scale = 2.0
 centered = false
