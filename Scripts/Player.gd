@@ -14,6 +14,10 @@ onready var sprite = $player_sprite_on
 onready var sprite2 = $player_sprite_off
 onready var animationPlayer = $AnimationPlayer
 onready var blackground = $Blackground
+onready var jumpSound = $Jump
+onready var deathSound = $"Game Over"
+onready var milestone = $Milestone
+onready var score = $Score
 
 func get_input():
 	dir = 0
@@ -36,6 +40,7 @@ func get_input():
 
 func jump():
 	if Input.is_action_just_pressed("jump"):
+		jumpSound.play()
 		return true
 
 func _physics_process(delta):
@@ -91,6 +96,6 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 
-
 func kill():
+	deathSound.play()
 	get_parent().end_game()
