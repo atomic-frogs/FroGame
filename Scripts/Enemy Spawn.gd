@@ -7,7 +7,7 @@ export (PackedScene) var enemy
 
 var enemys = 0
 
-func _process(delta):
+func _process(_delta):
 	if Global.world != null:
 		if !is_connected("instance_node", Global.world, "instance_node"):
 			connect("instance_node", Global.world, "instance_node")

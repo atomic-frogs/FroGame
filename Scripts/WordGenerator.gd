@@ -32,7 +32,7 @@ func _process(delta):
 		elif action < 10:
 			emit_signal("instance_node", fase3, global_position)
 		
-		global_position.y -= 90
+		global_position.y -= 180
 		
 #		current_block_number += 1
 		Global.levels_to_generate -= 1
