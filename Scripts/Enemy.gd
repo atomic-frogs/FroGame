@@ -11,7 +11,6 @@ func _ready():
 
 func _physics_process(delta):
 	global_position += speed * global_position.direction_to(Global.player_position) * delta
-	print(Global.player_position)
 	
 	if Global.off:
 		if !death:

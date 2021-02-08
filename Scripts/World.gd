@@ -10,10 +10,16 @@ func _ready():
 	starting = $Player.get_global_position().y
 	Global.world = self
 	Global.levels_to_generate = 3
+	
+	Global.new_highscore = false
 
-
-func _process(delta):
+func _process(_delta):
 	score = (abs($Player.get_global_position().y) - starting) / 10
+	if score > Global.highScore:
+		Global.highScore = score
+		Global.new_highscore = true
+		
+	
 	label.text = str(int(score))
 	
 	Global.player_position = $Player.get_global_position()
@@ -30,11 +36,7 @@ func instance_node(node, location):
 
 
 func end_game():
-	if score > Global.highScore:
-		Global.highScore = score
-		Global.new_highscore = true
-	else:
-		Global.score_last_played = score
-		Global.new_highscore = false
+	Global.score_last_played = score
+	
 	get_tree().change_scene("res://Scenes/End Game.tscn")
 	

@@ -152,7 +152,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 6.43145, 5.80511 )
+extents = Vector2( 7, 7 )
 
 [sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 3 )
@@ -185,7 +185,7 @@ texture = ExtResource( 1 )
 flip_h = true
 vframes = 3
 hframes = 7
-frame = 13
+frame = 14
 region_rect = Rect2( 19, 4, 1, 2 )
 
 [node name="player_sprite_off" type="Sprite" parent="."]
@@ -193,11 +193,11 @@ position = Vector2( 0, -6 )
 texture = ExtResource( 8 )
 vframes = 3
 hframes = 7
-frame = 3
+frame = 14
 region_rect = Rect2( 19, 4, 1, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.61427, -6.33225 )
+position = Vector2( 0, -6 )
 shape = SubResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -208,10 +208,12 @@ enabled = true
 cast_to = Vector2( 0, 10 )
 
 [node name="Score" type="Label" parent="."]
-margin_left = -21.0
+margin_left = -13.0
 margin_top = -40.0
+margin_right = 8.0
 margin_bottom = -26.0
 custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.262745, 0.321569, 0.239216, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
