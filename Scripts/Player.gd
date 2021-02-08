@@ -15,7 +15,7 @@ onready var sprite2 = $player_sprite_off
 onready var animationPlayer = $AnimationPlayer
 onready var blackground = $Blackground
 onready var jumpSound = $Jump
-onready var deathSound = $"Game Over"
+onready var deathSound = $GameOver
 onready var milestone = $Milestone
 onready var score = $Score
 
