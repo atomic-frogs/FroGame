@@ -11,7 +11,7 @@ func _ready():
 
 func _physics_process(delta):
 	speed = Global.score * 1.5
-	clamp(speed, 0, 70)
+	clamp(speed, 0, 10)
 	global_position.y -= speed * delta
 
 	global_position += speed * global_position.direction_to(Global.player_position) * delta

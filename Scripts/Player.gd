@@ -35,8 +35,7 @@ func get_input():
 		velocity.x = lerp(velocity.x, 0, friction)
 	
 	
-	if Input.is_action_just_pressed("grudar"):
-		kill()
+
 
 func jump():
 	if Input.is_action_just_pressed("jump"):

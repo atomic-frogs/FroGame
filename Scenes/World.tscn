@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Interruptor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Enemy Spawn.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/WordGenerator.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=7]
@@ -21,11 +20,8 @@ max_blocks = 3
 [node name="Sprite" type="Sprite" parent="WordGenerator"]
 texture = ExtResource( 11 )
 
-[node name="Interruptor" parent="." instance=ExtResource( 4 )]
-position = Vector2( 34.0308, -9.09397 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 50.6575, -8.80435 )
+position = Vector2( 111, -4 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2( -2.99181, 6.91659 )
@@ -116,4 +112,4 @@ region_enabled = true
 region_rect = Rect2( 3.79671, 4.29794, 30.9004, 9.25762 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0 )
+tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0 )

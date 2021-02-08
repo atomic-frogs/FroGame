@@ -38,7 +38,6 @@ func instance_fase(node, location):
 	add_child(node_instance)
 	node_instance.global_position = location
 	$WordGenerator.altura_level = node_instance.altura
-	print($WordGenerator.altura_level)
 	
 
 
