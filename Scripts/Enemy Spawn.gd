@@ -5,7 +5,7 @@ signal instance_node(node, location)
 
 export (PackedScene) var enemy
 
-var enemys = 0
+
 
 func _process(_delta):
 	if Global.world != null:
@@ -14,9 +14,9 @@ func _process(_delta):
 	
 		var action = round(rand_range(0, 20))
 		
-		if enemys > 0:
+		if Global.enemys > 0:
 			emit_signal("instance_node", enemy, global_position)
-			enemys -= 1
+			Global.enemys -= 1
 		
 		
 	else:
