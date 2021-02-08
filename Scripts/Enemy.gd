@@ -10,14 +10,23 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	speed = Global.score * 1.5
+	clamp(speed, 0, 70)
+	global_position.y -= speed * delta
+
 	global_position += speed * global_position.direction_to(Global.player_position) * delta
+	
 	
 	if Global.off:
 		if !death:
 			$AnimationPlayer.play("death")
 			death = true
 		if !$AnimationPlayer.is_playing():
+			
+			Global.enemys += 1
 			queue_free()
+	else:
+		$AnimationPlayer.play("Normal")
 
 
 

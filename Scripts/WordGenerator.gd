@@ -19,6 +19,7 @@ var current_block_number = 0
 
 func _process(delta):
 	if Global.levels_to_generate > 0:
+		print(Global.levels_to_generate)
 		if Global.world != null:
 			if !is_connected("instance_node", Global.world, "instance_node"):
 				connect("instance_node", Global.world, "instance_node")
@@ -34,5 +35,6 @@ func _process(delta):
 		
 		global_position.y -= 180
 		
-#		current_block_number += 1
 		Global.levels_to_generate -= 1
+#		print(Global.levels_to_generate)
+

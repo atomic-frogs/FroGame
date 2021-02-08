@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=2]
@@ -10,12 +10,16 @@
 [ext_resource path="res://Scripts/Espinho.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Espinhos.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Sprites/FULL_BLOCK_13x6.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/enemy.png" type="Texture" id=11]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="WordGenerator" parent="." instance=ExtResource( 6 )]
 max_blocks = 3
+
+[node name="Sprite" type="Sprite" parent="WordGenerator"]
+texture = ExtResource( 11 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 34.0308, -9.09397 )
@@ -33,7 +37,7 @@ script = ExtResource( 5 )
 enemy = ExtResource( 7 )
 
 [node name="Espinhos" type="Node2D" parent="."]
-position = Vector2( -10, 71 )
+position = Vector2( -9, 43 )
 z_index = 1
 script = ExtResource( 9 )
 __meta__ = {
@@ -111,4 +115,4 @@ region_enabled = true
 region_rect = Rect2( 3.79671, 4.29794, 30.9004, 9.25762 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0 )
+tile_data = PoolIntArray( 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0 )

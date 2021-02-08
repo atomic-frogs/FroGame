@@ -1,6 +1,6 @@
 extends Node2D
 
-var score = 0
+
 var starting 
 
 onready var label = $Player/Score
@@ -10,17 +10,16 @@ func _ready():
 	starting = $Player.get_global_position().y
 	Global.world = self
 	Global.levels_to_generate = 3
-	
-	Global.new_highscore = false
+	Global.enemys = 1
 
 func _process(_delta):
-	score = (abs($Player.get_global_position().y) - starting) / 10
-	if score > Global.highScore:
-		Global.highScore = score
+	Global.score = (abs($Player.get_global_position().y) - starting) / 10
+	if Global.score > Global.highScore:
+		Global.highScore = Global.score
 		Global.new_highscore = true
 		
 	
-	label.text = str(int(score))
+	label.text = str(int(Global.score))
 	
 	Global.player_position = $Player.get_global_position()
 
@@ -36,7 +35,7 @@ func instance_node(node, location):
 
 
 func end_game():
-	Global.score_last_played = score
+	Global.score_last_played = Global.score
 	
 	get_tree().change_scene("res://Scenes/End Game.tscn")
 	
