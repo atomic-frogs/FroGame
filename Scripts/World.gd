@@ -31,7 +31,15 @@ func _exit_tree():
 func instance_node(node, location):
 	var node_instance = node.instance()
 	add_child(node_instance)
+
+
+func instance_fase(node, location):
+	var node_instance = node.instance()
+	add_child(node_instance)
 	node_instance.global_position = location
+	$WordGenerator.altura_level = node_instance.altura
+	print($WordGenerator.altura_level)
+	
 
 
 func end_game():
