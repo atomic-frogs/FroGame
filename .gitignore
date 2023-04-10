@@ -1,5 +1,2 @@
-.DS_Store
-.idea
-*.log
-tmp/
-.import
+# Godot 4+ specific ignores
+.godot/
