@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://db1o0j13nayei"]
+
+[ext_resource type="Texture2D" uid="uid://d1u1ip1hieggq" path="res://Assets/Sprites/spike.png" id="1_pwt68"]
+[ext_resource type="Texture2D" uid="uid://n80dcl6sl6gv" path="res://Assets/Sprites/tile.png" id="2_ppkex"]
+[ext_resource type="Texture2D" uid="uid://ckat3d1qdd4t8" path="res://Assets/Sprites/full_block_3x3.png" id="3_ibla4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ugc1"]
+size = Vector2(9, 9)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Spike" type="Sprite2D" parent="."]
+position = Vector2(10, 6)
+texture = ExtResource("1_pwt68")
+centered = false
+
+[node name="Tile" type="Sprite2D" parent="."]
+position = Vector2(22, 5)
+texture = ExtResource("2_ppkex")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="FullBlock3x3" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("3_ibla4")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_1ugc1")

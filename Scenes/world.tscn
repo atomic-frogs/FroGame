@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgpp06w2gitro"]
+
+[ext_resource type="Texture2D" uid="uid://d1u1ip1hieggq" path="res://Assets/Sprites/spike.png" id="1_0obu4"]
+[ext_resource type="Texture2D" uid="uid://cioep144bx54k" path="res://Assets/Sprites/spikes.png" id="1_oig8j"]
+[ext_resource type="Texture2D" uid="uid://ckat3d1qdd4t8" path="res://Assets/Sprites/full_block_3x3.png" id="2_mrx0i"]
+[ext_resource type="PackedScene" uid="uid://bosmf1q8it82t" path="res://Scenes/player.tscn" id="3_yhp8n"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukmgd"]
+texture = ExtResource("1_oig8j")
+texture_region_size = Vector2i(3, 3)
+3:0/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6act"]
+texture = ExtResource("1_0obu4")
+texture_region_size = Vector2i(1, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drst2"]
+texture = ExtResource("2_mrx0i")
+texture_region_size = Vector2i(3, 3)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lh8qe"]
+tile_size = Vector2i(3, 3)
+sources/3 = SubResource("TileSetAtlasSource_ukmgd")
+sources/4 = SubResource("TileSetAtlasSource_g6act")
+sources/5 = SubResource("TileSetAtlasSource_drst2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2377q"]
+size = Vector2(179, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjk3l"]
+size = Vector2(76, 158)
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_lh8qe")
+format = 2
+
+[node name="Player" parent="." instance=ExtResource("3_yhp8n")]
+position = Vector2(1, -15)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(20, 10)
+shape = SubResource("RectangleShape2D_2377q")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-100, -60)
+shape = SubResource("RectangleShape2D_fjk3l")
